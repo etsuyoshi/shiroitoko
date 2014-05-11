@@ -285,6 +285,14 @@ int hitNumber;//あたり番号
     [self.view addSubview:label];
     
     
+    //timer停止
+    [timer invalidate]; 
+    //
+    
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    
 }
 
 - (void)time:(NSTimer*)timer{
@@ -295,6 +303,10 @@ int hitNumber;//あたり番号
         
         
         labelTimer.text = [NSString stringWithFormat:@"%.2f", (double)timeCounter/100.0f];
+    }else{
+        [self gameOver];
+        
+        
     }
     
     

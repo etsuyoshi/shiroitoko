@@ -21,6 +21,8 @@
 		2A016391191F163800DC5204 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A01638F191F163800DC5204 /* InfoPlist.strings */; };
 		2A016393191F163800DC5204 /* ShiroitokoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A016392191F163800DC5204 /* ShiroitokoTests.m */; };
 		2A01639E191F171900DC5204 /* SHTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A01639D191F171900DC5204 /* SHTile.m */; };
+		2A0A650C191F44F700DDB21A /* SHStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A650B191F44F700DDB21A /* SHStartViewController.m */; };
+		2AACC24A191F970300EE12B5 /* SHInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AACC249191F970300EE12B5 /* SHInitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		2A016392191F163800DC5204 /* ShiroitokoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShiroitokoTests.m; sourceTree = "<group>"; };
 		2A01639C191F171900DC5204 /* SHTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTile.h; sourceTree = "<group>"; };
 		2A01639D191F171900DC5204 /* SHTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTile.m; sourceTree = "<group>"; };
+		2A0A650A191F44F700DDB21A /* SHStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHStartViewController.h; sourceTree = "<group>"; };
+		2A0A650B191F44F700DDB21A /* SHStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHStartViewController.m; sourceTree = "<group>"; };
+		2AACC248191F970300EE12B5 /* SHInitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHInitViewController.h; sourceTree = "<group>"; };
+		2AACC249191F970300EE12B5 /* SHInitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHInitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				2A016374191F163800DC5204 /* SHAppDelegate.m */,
 				2A01637C191F163800DC5204 /* SHViewController.h */,
 				2A01637D191F163800DC5204 /* SHViewController.m */,
+				2A0A650A191F44F700DDB21A /* SHStartViewController.h */,
+				2A0A650B191F44F700DDB21A /* SHStartViewController.m */,
+				2AACC248191F970300EE12B5 /* SHInitViewController.h */,
+				2AACC249191F970300EE12B5 /* SHInitViewController.m */,
 				2A01639C191F171900DC5204 /* SHTile.h */,
 				2A01639D191F171900DC5204 /* SHTile.m */,
 				2A01637F191F163800DC5204 /* Images.xcassets */,
@@ -252,7 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A01639E191F171900DC5204 /* SHTile.m in Sources */,
+				2A0A650C191F44F700DDB21A /* SHStartViewController.m in Sources */,
 				2A016371191F163800DC5204 /* main.m in Sources */,
+				2AACC24A191F970300EE12B5 /* SHInitViewController.m in Sources */,
 				2A01637E191F163800DC5204 /* SHViewController.m in Sources */,
 				2A016375191F163800DC5204 /* SHAppDelegate.m in Sources */,
 			);
@@ -453,6 +465,7 @@
 				2A016398191F163800DC5204 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A016399191F163800DC5204 /* Build configuration list for PBXNativeTarget "ShiroitokoTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +474,7 @@
 				2A01639B191F163800DC5204 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

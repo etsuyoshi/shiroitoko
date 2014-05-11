@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "SHViewController.h"
+#import "SHStartViewController.h"
 
 @interface SHAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) SHViewController *shViewController;
+//@property (strong, nonatomic) SHViewController *shViewController;
+@property (strong, nonatomic) SHStartViewController *shStartViewController;
 
 @end
