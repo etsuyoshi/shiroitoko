@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SHTile.h"
 
 @interface SHViewController : UIViewController
 

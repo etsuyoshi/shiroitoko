@@ -22,6 +22,7 @@
 		2A016389191F163800DC5204 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A016368191F163800DC5204 /* UIKit.framework */; };
 		2A016391191F163800DC5204 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A01638F191F163800DC5204 /* InfoPlist.strings */; };
 		2A016393191F163800DC5204 /* ShiroitokoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A016392191F163800DC5204 /* ShiroitokoTests.m */; };
+		2A01639E191F171900DC5204 /* SHTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A01639D191F171900DC5204 /* SHTile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		2A01638E191F163800DC5204 /* ShiroitokoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShiroitokoTests-Info.plist"; sourceTree = "<group>"; };
 		2A016390191F163800DC5204 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A016392191F163800DC5204 /* ShiroitokoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShiroitokoTests.m; sourceTree = "<group>"; };
+		2A01639C191F171900DC5204 /* SHTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTile.h; sourceTree = "<group>"; };
+		2A01639D191F171900DC5204 /* SHTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				2A016379191F163800DC5204 /* Main_iPad.storyboard */,
 				2A01637C191F163800DC5204 /* SHViewController.h */,
 				2A01637D191F163800DC5204 /* SHViewController.m */,
+				2A01639C191F171900DC5204 /* SHTile.h */,
+				2A01639D191F171900DC5204 /* SHTile.m */,
 				2A01637F191F163800DC5204 /* Images.xcassets */,
 				2A01636B191F163800DC5204 /* Supporting Files */,
 			);
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A01639E191F171900DC5204 /* SHTile.m in Sources */,
 				2A016371191F163800DC5204 /* main.m in Sources */,
 				2A01637E191F163800DC5204 /* SHViewController.m in Sources */,
 				2A016375191F163800DC5204 /* SHAppDelegate.m in Sources */,
