@@ -14,7 +14,8 @@
 @end
 
 @implementation SHStartViewController
-NSTimer *timer;
+@synthesize timer;
+
 int timeStarter;
 
 UILabel *labelStarter;
@@ -48,6 +49,13 @@ UILabel *labelStarter;
     [self.view addSubview:labelStarter];
     
     
+    
+    self.navigationItem.leftBarButtonItem =
+    [[UIBarButtonItem alloc]
+     initWithTitle:@"Back"
+     style:UIBarButtonItemStyleDone
+     target:self action:@selector(pressedBarBackButton:)];
+    self.navigationItem.hidesBackButton = YES;
     
 }
 
@@ -83,7 +91,7 @@ UILabel *labelStarter;
                                     self.view.bounds.size.height/2);
     
     
-    timer = [NSTimer
+    self.timer = [NSTimer
              scheduledTimerWithTimeInterval:1.0f
              target:self
              selector:@selector(time:)//タイマー呼び出し
@@ -95,7 +103,7 @@ UILabel *labelStarter;
 -(void)time:(NSTimer *)timer{
     NSLog(@"timer = %d", timeStarter);
     timeStarter --;
-    labelStarter.text = [NSString stringWithFormat:@"c:%d", timeStarter];
+    labelStarter.text = [NSString stringWithFormat:@"%d", timeStarter];
     [labelStarter sizeToFit];
     labelStarter.center = CGPointMake(self.view.bounds.size.width/2,
                                     self.view.bounds.size.height/2);
@@ -116,17 +124,27 @@ UILabel *labelStarter;
         //TIMERを停止
         [self stopTimer];
         //
-        
+        labelStarter.text = @"";
         SHViewController *vc = [[SHViewController alloc]init];
 //        [self presentViewController:vc animated:NO completion:nil];
         [self.navigationController pushViewController:vc animated:NO];
         
     }
-
+    
+    
 }
 
+
+
 -(void)stopTimer{
-    [timer invalidate];
+    [self.timer invalidate];
+}
+
+-(void)pressedBarBackButton:(id)sender{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.timer invalidate];
 }
 
 @end

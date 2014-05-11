@@ -17,6 +17,7 @@ NSTimer *timer;
 NSMutableArray *arrTile;
 UILabel *labelHitCounter;
 UILabel *labelTimer;
+BOOL isGame;
 
 int hitCounter;
 int timeCounter;
@@ -38,6 +39,25 @@ int hitNumber;//あたり番号
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //statusbarを隠す
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        // iOS 7
+        [self prefersStatusBarHidden];
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    } else {
+        // iOS 6
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    }
+    
+    
+    
+    self.navigationItem.leftBarButtonItem =
+    [[UIBarButtonItem alloc]
+     initWithTitle:@"Back"
+     style:UIBarButtonItemStyleDone
+     target:self action:@selector(pressedBarBackButton:)];
+    self.navigationItem.hidesBackButton = YES;
+    
     
     labelHitCounter = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, 150, 20)];
     labelHitCounter.text = @"0";
@@ -46,7 +66,7 @@ int hitNumber;//あたり番号
     labelHitCounter.textColor = [UIColor redColor];
     labelHitCounter.backgroundColor = [UIColor clearColor];
     labelHitCounter.center = CGPointMake(labelHitCounter.bounds.size.width/2,
-                                         30);
+                                         55);
     
     
     labelTimer = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, 150, 20)];
@@ -56,7 +76,7 @@ int hitNumber;//あたり番号
     labelTimer.textColor = [UIColor redColor];
     labelTimer.backgroundColor = [UIColor clearColor];
     labelTimer.center = CGPointMake(self.view.bounds.size.width-labelTimer.bounds.size.width/2,
-                                    30);
+                                    55);
     
     
     
@@ -115,6 +135,21 @@ int hitNumber;//あたり番号
              userInfo:nil
              repeats:YES];
     
+    isGame = true;
+    
+    
+    [self initialization];
+    
+}
+
+-(void)initialization{
+    labelHitCounter.text = @"0";
+    labelTimer.text = @"00:00";
+    
+    hitCounter = 0;
+    timeCounter = 0;
+    hitCounter = 0;
+
     
 }
 
@@ -281,41 +316,88 @@ int hitNumber;//あたり番号
     label.backgroundColor = [UIColor clearColor];
     
     label.center = CGPointMake(self.view.bounds.size.width/2,
-                               self.view.bounds.size.height/2);
+                               self.view.bounds.size.height/4);
     
     [self.view addSubview:label];
     
     
-    //timer停止
-    [timer invalidate]; 
-    //
     
     
     
-    //repeat
-//    [self dismissViewControllerAnimated:NO completion:nil];
     
-    NSLog(@"aaa = %@", self.navigationController);
+    isGame = false;
     
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    
+    
+    
     
 }
+
+-(void)alertView:(UIAlertView*)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (buttonIndex) {
+        case 0:
+            //１番目のボタンが押されたときの処理を記述する
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            NSLog(@"「最初から」が選択されました");
+            break;
+        case 1:
+            //２番目のボタンが押されたときの処理を記述する
+            [self.navigationController popViewControllerAnimated:YES];
+            NSLog(@"「戻る」ボタンが押されました");
+            break;
+    }
+    
+}
+
 
 - (void)time:(NSTimer*)timer{
     //0.01秒ごとに呼ばれる
     
-    if(timeCounter < 10000){
-        timeCounter ++;
-        
-        
-        labelTimer.text = [NSString stringWithFormat:@"%.2f", (double)timeCounter/100.0f];
+    if(isGame){
+        if(timeCounter < 10000){
+            timeCounter ++;
+            labelTimer.text = [NSString stringWithFormat:@"%.2f", (double)timeCounter/100.0f];
+        }else{
+            NSLog(@"timer is over 10000 so game over!");
+            [self gameOver];
+        }
     }else{
-        NSLog(@"timer is over 10000 so game over!");
-        [self gameOver];
         
+        UIAlertView *alert =
+        [[UIAlertView alloc]
+         initWithTitle:@"メニューを選んで下さい"
+         message:nil
+         delegate:self
+         cancelButtonTitle:@"メニューに戻る"
+         otherButtonTitles:@"もう一回", nil
+         ];
+        [alert show];
+        
+        
+        //timer停止
+        [timer invalidate];
+        //
+
         
     }
     
     
 }
+
+//statusbarを隠す
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+
+-(void)pressedBarBackButton:(id)sender{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    [self initialization];
+    [timer invalidate];
+}
+
 @end

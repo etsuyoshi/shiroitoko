@@ -10,5 +10,5 @@
 #import "SHViewController.h"
 
 @interface SHStartViewController : UIViewController
-
+@property (nonatomic) NSTimer *timer;
 @end
