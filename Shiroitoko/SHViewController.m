@@ -261,6 +261,7 @@ int hitNumber;//あたり番号
                                               completion:^(BOOL finished2){
                                                   
                                                   if(finished2){
+                                                      NSLog(@"game over calling...");
                                                       [self gameOver];
                                                   }
                                               }];
@@ -269,7 +270,7 @@ int hitNumber;//あたり番号
 }
 
 -(void)gameOver{
-    
+    NSLog(@"game over");
     UILabel *label = [[UILabel alloc]initWithFrame:
     CGRectMake(0, 0, self.view.bounds.size.width-50, 300)];
     
@@ -290,8 +291,13 @@ int hitNumber;//あたり番号
     //
     
     
-    [self dismissViewControllerAnimated:NO completion:nil];
     
+    //repeat
+//    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    NSLog(@"aaa = %@", self.navigationController);
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
     
 }
 
@@ -304,6 +310,7 @@ int hitNumber;//あたり番号
         
         labelTimer.text = [NSString stringWithFormat:@"%.2f", (double)timeCounter/100.0f];
     }else{
+        NSLog(@"timer is over 10000 so game over!");
         [self gameOver];
         
         

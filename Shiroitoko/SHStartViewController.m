@@ -118,7 +118,8 @@ UILabel *labelStarter;
         //
         
         SHViewController *vc = [[SHViewController alloc]init];
-        [self presentViewController:vc animated:NO completion:nil];
+//        [self presentViewController:vc animated:NO completion:nil];
+        [self.navigationController pushViewController:vc animated:NO];
         
     }
 

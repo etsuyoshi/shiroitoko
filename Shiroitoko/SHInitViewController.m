@@ -27,6 +27,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    HTPressableButton *roundedRectButton = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    roundedRectButton.frame = CGRectMake(30, 230, 260, 50);
+    roundedRectButton.style = HTPressableButtonStyleRounded;
+    [roundedRectButton setTitle:@"Rounded" forState:UIControlStateNormal];
+    roundedRectButton.tag = 0;
+    [roundedRectButton addTarget:self
+                          action:@selector(buttonPressed:)
+                forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:roundedRectButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,5 +56,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+-(void)buttonPressed:(id)sender{
+    
+    if(((UIView*)sender).tag == 0){
+        SHStartViewController *startVC =
+        [[SHStartViewController alloc]init];
+//        [self presentViewController:startVC animated:NO completion:nil];
+        [self.navigationController pushViewController:startVC animated:NO];
+    }
+    
+    
+}
 
 @end

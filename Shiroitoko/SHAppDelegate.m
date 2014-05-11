@@ -15,9 +15,28 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.shViewController = [[SHViewController alloc] init];//最初に立ち上げるviewControllerを変更する場合はここを変更
-    self.shStartViewController = [[SHStartViewController alloc] init];
-    self.window.rootViewController = self.shStartViewController;
+    self.firstViewController = (UIViewController *)[[SHInitViewController alloc] init];
+    
+    //navigationControllerによってviewControllerを内包しておけばrootViewControllerにも戻れる
+    UINavigationController *navCon =
+    [[UINavigationController alloc]
+     initWithRootViewController:self.firstViewController];
+//    self.window.rootViewController = self.firstViewController;
+    self.window.rootViewController = navCon;
     [self.window makeKeyAndVisible];
+    
+    
+    
+    
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    UIViewController *con = [[STViewController alloc] init];
+//    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:con];
+//    
+//    self.viewController = navCon;
+//    self.window.rootViewController = self.viewController;
+//    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

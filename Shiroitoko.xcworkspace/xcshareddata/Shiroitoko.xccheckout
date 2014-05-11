@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>24759AB9-E156-4A6B-A455-E72A1244AEAB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Shiroitoko</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D9B49196-8F66-4B0A-A286-5C99FFFC07A7</key>
+		<string>ssh://github.com/etsuyoshi/shiroitoko.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Shiroitoko.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D9B49196-8F66-4B0A-A286-5C99FFFC07A7</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/etsuyoshi/shiroitoko.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D9B49196-8F66-4B0A-A286-5C99FFFC07A7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D9B49196-8F66-4B0A-A286-5C99FFFC07A7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Shiroitoko</string>
+		</dict>
+	</array>
+</dict>
+</plist>
