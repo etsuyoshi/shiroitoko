@@ -15,6 +15,7 @@
 
 UIColor *myBlackColor;
 UIColor *myWhiteColor;
+UIColor *myRedColor;
 
 
 -(id)initWithFrame:(CGRect)frame{
@@ -44,6 +45,12 @@ UIColor *myWhiteColor;
     
     self.isOn = !self.isOn;
     
+}
+
+
+-(void)resetColor{
+    self.viewTile.backgroundColor = myWhiteColor;
+    self.isOn = false;
 }
 
 

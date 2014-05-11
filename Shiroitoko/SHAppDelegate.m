@@ -13,6 +13,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.shViewController = [[SHViewController alloc] init];//最初に立ち上げるviewControllerを変更する場合はここを変更
+    self.window.rootViewController = self.shViewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							

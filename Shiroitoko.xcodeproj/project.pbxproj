@@ -13,8 +13,6 @@
 		2A01636F191F163800DC5204 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A01636D191F163800DC5204 /* InfoPlist.strings */; };
 		2A016371191F163800DC5204 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A016370191F163800DC5204 /* main.m */; };
 		2A016375191F163800DC5204 /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A016374191F163800DC5204 /* SHAppDelegate.m */; };
-		2A016378191F163800DC5204 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A016376191F163800DC5204 /* Main_iPhone.storyboard */; };
-		2A01637B191F163800DC5204 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A016379191F163800DC5204 /* Main_iPad.storyboard */; };
 		2A01637E191F163800DC5204 /* SHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A01637D191F163800DC5204 /* SHViewController.m */; };
 		2A016380191F163800DC5204 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A01637F191F163800DC5204 /* Images.xcassets */; };
 		2A016387191F163800DC5204 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A016386191F163800DC5204 /* XCTest.framework */; };
@@ -46,8 +44,6 @@
 		2A016372191F163800DC5204 /* Shiroitoko-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Shiroitoko-Prefix.pch"; sourceTree = "<group>"; };
 		2A016373191F163800DC5204 /* SHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
 		2A016374191F163800DC5204 /* SHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
-		2A016377191F163800DC5204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		2A01637A191F163800DC5204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		2A01637C191F163800DC5204 /* SHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHViewController.h; sourceTree = "<group>"; };
 		2A01637D191F163800DC5204 /* SHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHViewController.m; sourceTree = "<group>"; };
 		2A01637F191F163800DC5204 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -119,8 +115,6 @@
 			children = (
 				2A016373191F163800DC5204 /* SHAppDelegate.h */,
 				2A016374191F163800DC5204 /* SHAppDelegate.m */,
-				2A016376191F163800DC5204 /* Main_iPhone.storyboard */,
-				2A016379191F163800DC5204 /* Main_iPad.storyboard */,
 				2A01637C191F163800DC5204 /* SHViewController.h */,
 				2A01637D191F163800DC5204 /* SHViewController.m */,
 				2A01639C191F171900DC5204 /* SHTile.h */,
@@ -237,9 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A01637B191F163800DC5204 /* Main_iPad.storyboard in Resources */,
 				2A016380191F163800DC5204 /* Images.xcassets in Resources */,
-				2A016378191F163800DC5204 /* Main_iPhone.storyboard in Resources */,
 				2A01636F191F163800DC5204 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,22 +283,6 @@
 				2A01636E191F163800DC5204 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2A016376191F163800DC5204 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A016377191F163800DC5204 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		2A016379191F163800DC5204 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A01637A191F163800DC5204 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		2A01638F191F163800DC5204 /* InfoPlist.strings */ = {

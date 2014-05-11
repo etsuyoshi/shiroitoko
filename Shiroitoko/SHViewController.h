@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SHTile.h"
 
-@interface SHViewController : UIViewController
+@interface SHViewController : UIViewController//<UIGestureRecognizerDelegate>
 
 @end

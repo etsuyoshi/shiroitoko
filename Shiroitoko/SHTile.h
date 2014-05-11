@@ -15,5 +15,5 @@
 
 -(id)initWithFrame:(CGRect)rect;
 -(void)changeColor;
-
+-(void)resetColor;
 @end
