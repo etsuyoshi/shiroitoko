@@ -10,6 +10,8 @@
 #import "HTPressableButton.h"
 #import "UIColor+HTColor.h"
 #import "SHStartViewController.h"
+#import "SHSumViewController.h"
+#import "SHSpeedViewController.h"
 
 @interface SHInitViewController : UIViewController
 

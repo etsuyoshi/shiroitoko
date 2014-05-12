@@ -9,7 +9,7 @@
 #import "SHTile.h"
 
 @implementation SHTile
-@synthesize viewTile;
+//@synthesize viewTile;
 @synthesize isOn;
 //@synthesize myColor;
 
@@ -19,15 +19,15 @@ UIColor *myRedColor;
 
 
 -(id)initWithFrame:(CGRect)frame{
-    self = [super init];
+    self = [super initWithFrame:frame];
     
     if(self) {
         myBlackColor = [[UIColor blackColor] colorWithAlphaComponent:0.9f];
         myWhiteColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8f];
         self.isOn = NO;
 //        self.myColor = myWhiteColor;
-        self.viewTile = [[UIView alloc]initWithFrame:frame];
-        self.viewTile.backgroundColor = myWhiteColor;
+//        self.viewTile = [[UIView alloc]initWithFrame:frame];
+        self.backgroundColor = myWhiteColor;
     }
     
     return self;
@@ -37,10 +37,10 @@ UIColor *myRedColor;
 
 
 -(void)changeColor{
-    if([self.viewTile.backgroundColor isEqual:myWhiteColor]){
-        self.viewTile.backgroundColor = myBlackColor;
+    if([self.backgroundColor isEqual:myWhiteColor]){
+        self.backgroundColor = myBlackColor;
     }else{
-        self.viewTile.backgroundColor = myWhiteColor;
+        self.backgroundColor = myWhiteColor;
     }
     
     self.isOn = !self.isOn;
@@ -49,7 +49,7 @@ UIColor *myRedColor;
 
 
 -(void)resetColor{
-    self.viewTile.backgroundColor = myWhiteColor;
+    self.backgroundColor = myWhiteColor;
     self.isOn = false;
 }
 

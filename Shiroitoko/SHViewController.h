@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SHTile.h"
+#import "SHTouchPanel.h"
+//#import "TouchesDelegate.h"
 
-@interface SHViewController : UIViewController//<UIGestureRecognizerDelegate>
+
+@interface SHViewController : UIViewController//<UITouchesDelegate>//<UIGestureRecognizerDelegate>
 
 @end

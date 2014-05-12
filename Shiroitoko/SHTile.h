@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SHTile : NSObject
-@property(nonatomic) UIView *viewTile;
+@interface SHTile : UIView
+//@property(nonatomic) UIView *viewTile;
 @property(nonatomic) BOOL isOn;
 //@property(nonatomic) UIColor myColor;
 

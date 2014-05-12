@@ -34,8 +34,9 @@ int intervalButton = 20;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor orangeColor];
     
+    //10秒でどこまでいけるか
     HTPressableButton *game10sec = [HTPressableButton buttonWithType:UIButtonTypeCustom];
     game10sec.frame = CGRectMake(initXButton, initYButton, widthButton, heightButton);
     game10sec.style = HTPressableButtonStyleRounded;
@@ -48,6 +49,14 @@ int intervalButton = 20;
     [self.view addSubview:game10sec];
     
     
+    
+    //間違えてもいいから総時間内に取得したタイルの数：連続して正解すると＋２点とか。
+    //すんどめ
+    //与えられたタイミングで取得する
+    //複数の指を使う
+    //取得可能タイルが複数
+    //逆向き方向
+    //ダブルタッチ、トリプルタッチ
     HTPressableButton *gameSummation = [HTPressableButton buttonWithType:UIButtonTypeCustom];
     gameSummation.frame = CGRectMake(initXButton, initYButton + heightButton + intervalButton,
                                      widthButton, heightButton);
@@ -64,6 +73,7 @@ int intervalButton = 20;
     
     
     
+    //50個を取得するのに要する時間
     HTPressableButton *gameSpeed = [HTPressableButton buttonWithType:UIButtonTypeCustom];
     gameSpeed.frame = CGRectMake(initXButton, initYButton + (heightButton + intervalButton) * 2,
                                      widthButton, heightButton);
@@ -130,12 +140,12 @@ int intervalButton = 20;
             break;
         }
         case 1:{
-            nextVC = [[SHStartViewController alloc]init];
+            nextVC = [[SHSumViewController alloc]init];
             break;
         }
             
         case 2:{
-            nextVC = [[SHStartViewController alloc]init];
+            nextVC = [[SHSpeedViewController alloc]init];
             break;
         }
             

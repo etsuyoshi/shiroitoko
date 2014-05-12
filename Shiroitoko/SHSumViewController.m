@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 tsuyoshi. All rights reserved.
 //
 
-#import "SHViewController.h"
+#import "SHSumViewController.h"
 
-@interface SHViewController ()
+@interface SHSumViewController ()
 
 @end
 
-@implementation SHViewController
+@implementation SHSumViewController
 NSTimer *timer;
 NSMutableArray *arrTile;
 UILabel *labelHitCounter;
@@ -106,9 +106,9 @@ int hitNumber;//あたり番号
             y0 = j * (heightTile + widthLine);
             SHTile *myTile = [[SHTile alloc]initWithFrame:CGRectMake(x0, y0, widthTile, heightTile)];
             myTile.tag = [[NSString stringWithFormat:@"%d%d", j,i] intValue];//j行i列をjiとタグ付けする
-//            UITapGestureRecognizer *gesture =
-//            [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
-//            [myTile addGestureRecognizer:gesture];
+            //            UITapGestureRecognizer *gesture =
+            //            [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+            //            [myTile addGestureRecognizer:gesture];
             if(arc4random() % (totalColumnNum-1) == 0 && !isAlreadyOn){
                 [myTile changeColor];
                 isAlreadyOn = YES;
@@ -126,7 +126,7 @@ int hitNumber;//あたり番号
     
     
     
-//    NSTimer *tm = [[NSTimer alloc]init];
+    //    NSTimer *tm = [[NSTimer alloc]init];
     
     timer = [NSTimer
              scheduledTimerWithTimeInterval:0.01f
@@ -149,7 +149,7 @@ int hitNumber;//あたり番号
     hitCounter = 0;
     timeCounter = 0;
     hitCounter = 0;
-
+    
     
 }
 
@@ -177,18 +177,18 @@ int hitNumber;//あたり番号
     //タップ用ビュー
     for(int i =0;i < totalColumnNum;i++){
         CGRect rectTmp = CGRectMake(i * (widthTile + widthLine), 200, widthTile + widthLine, heightTile*2);
-//        UIView *viewForTap = [[UIView alloc]initWithFrame:rectTmp];
+        //        UIView *viewForTap = [[UIView alloc]initWithFrame:rectTmp];
         SHTouchPanel *viewForTap = [[SHTouchPanel alloc]initWithFrame:rectTmp];
         viewForTap.delegate = self;
         viewForTap.backgroundColor = [UIColor clearColor];
-//        viewForTap.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5f];//将来的にはclearColor
-//        viewForTap.backgroundColor = [UIColor colorWithRed:((double)i)/totalColumnNum green:1 blue:1 alpha:0.3f];
+        //        viewForTap.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5f];//将来的にはclearColor
+        //        viewForTap.backgroundColor = [UIColor colorWithRed:((double)i)/totalColumnNum green:1 blue:1 alpha:0.3f];
         viewForTap.tag = i;
         
         //touchesbegan:withEventで対応するのでgesture不要
-//        UITapGestureRecognizer *gesture =
-//        [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];//touch-downアクション対応にする
-//        [viewForTap addGestureRecognizer:gesture];
+        //        UITapGestureRecognizer *gesture =
+        //        [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];//touch-downアクション対応にする
+        //        [viewForTap addGestureRecognizer:gesture];
         [self.view addSubview:viewForTap];
     }
     
@@ -211,8 +211,9 @@ int hitNumber;//あたり番号
 //                [self proceed];
 //            }else{
 //                NSLog(@"はずれ");
-//                isGame = false;
-//                [self hazure:tappedView.tag];
+////                isGame = false;
+////                [self hazure:tappedView.tag];
+//                [self proceed];
 //            }
 //        }
 //        
@@ -223,11 +224,11 @@ int hitNumber;//あたり番号
 
 -(void)proceed{
     
-//    hitCounterをラベルに更新する
+    //    hitCounterをラベルに更新する
     labelHitCounter.text = [NSString stringWithFormat:@"%d",hitCounter];
     //最上段以外は上段のタイルをそのまま受け継ぐ(常に上段のステータスを確認するので下から更新していく)
     for(int j = totalRowNum - 1;j >= 1;j--){//0行目以外
-//        NSLog(@"j=%d", j);
+        //        NSLog(@"j=%d", j);
         for(int i = 0;i < totalColumnNum;i++){
             [((SHTile *)arrTile[j][i]) resetColor];
             if(((SHTile *)arrTile[j-1][i]).isOn){//上段のステータスを確認
@@ -241,7 +242,7 @@ int hitNumber;//あたり番号
                     //hitNumberの更新
                     hitNumber = i;
                     
-//                    NSLog(@"次のヒットは%d", hitNumber);
+                    //                    NSLog(@"次のヒットは%d", hitNumber);
                 }
             }
         }
@@ -284,7 +285,7 @@ int hitNumber;//あたり番号
                          
                          ((SHTile *)arrTile[totalColumnNum - 2][num]).backgroundColor =
                          [UIColor whiteColor];
-
+                         
                      }
                      completion:^(BOOL finished){
                          if(finished){
@@ -295,7 +296,7 @@ int hitNumber;//あたり番号
                                                   
                                                   ((SHTile *)arrTile[totalColumnNum - 2][num]).backgroundColor =
                                                   originalColor;
-
+                                                  
                                               }
                                               completion:^(BOOL finished2){
                                                   
@@ -311,7 +312,7 @@ int hitNumber;//あたり番号
 -(void)gameOver{
     NSLog(@"game over");
     UILabel *label = [[UILabel alloc]initWithFrame:
-    CGRectMake(0, 0, self.view.bounds.size.width-50, 300)];
+                      CGRectMake(0, 0, self.view.bounds.size.width-50, 300)];
     
     label.text = @"GAME OVER!";
     label.font = [UIFont systemFontOfSize:40];
@@ -360,7 +361,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     //0.01秒ごとに呼ばれる
     
     if(isGame){
-        if(timeCounter < 1000){
+        if(timeCounter < 3000){
             timeCounter ++;
             labelTimer.text = [NSString stringWithFormat:@"%.2f", (double)timeCounter/100.0f];
         }else{
@@ -383,7 +384,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
         //timer停止
         [timer invalidate];
         //
-
+        
         
     }
     
@@ -422,8 +423,9 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
                 [self proceed];
             }else{
                 NSLog(@"はずれ");
-                isGame = false;
-                [self hazure:tappedView.tag];
+//                isGame = false;
+//                [self hazure:tappedView.tag];
+                [self proceed];
             }
         }
         

@@ -13,6 +13,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+//    [[DeployGateSDK sharedInstance] launchApplicationWithAuthor:@"tuyo" key:@"cde96ad604139b1ff49b4ba8df840025eb18dfc5"];
+    [[DeployGateSDK sharedInstance] launchApplicationWithAuthor:@"tuyo" key:@"cde96ad604139b1ff49b4ba8df840025eb18dfc5" userInfomationEnabled:YES];
+    
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.shViewController = [[SHViewController alloc] init];//最初に立ち上げるviewControllerを変更する場合はここを変更
     self.firstViewController = (UIViewController *)[[SHInitViewController alloc] init];
@@ -65,6 +71,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    return [[DeployGateSDK sharedInstance] handleOpenUrl:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 @end

@@ -13,4 +13,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <DeployGateSDK/DeployGateSDK.h>
+    #define NSLog DGSLog
+    #define NSLog(__FORMAT__, ...) DGSLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #endif
