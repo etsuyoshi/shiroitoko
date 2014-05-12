@@ -144,6 +144,7 @@ int intervalButton = 20;
             break;
         }
         default:{
+            NSLog(@"意図しないボタンが検出されました。");
             return;
         }
     }

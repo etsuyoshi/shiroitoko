@@ -184,7 +184,7 @@ int hitNumber;//あたり番号
         viewForTap.tag = i;
         
         UITapGestureRecognizer *gesture =
-        [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+        [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];//touch-downアクション対応にする
         [viewForTap addGestureRecognizer:gesture];
         [self.view addSubview:viewForTap];
     }
