@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "SHViewController.h"
+#import "SHSumViewController.h"
+#import "SHSpeedViewController.h"
 
-@interface SHStartViewController : UIViewController
+@interface SHStartViewController : UIViewController{
+    int nextGameType;
+}
 @property (nonatomic) NSTimer *timer;
+@property int nextGameType;
 @end

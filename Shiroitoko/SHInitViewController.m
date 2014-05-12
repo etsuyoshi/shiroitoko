@@ -17,7 +17,7 @@
 int widthButton = 260;
 int heightButton = 50;
 int initXButton = 30;
-int initYButton = 170;
+int initYButton = 130;
 int intervalButton = 20;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,7 +34,7 @@ int intervalButton = 20;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor grassColor];
     
     //10秒でどこまでいけるか
     HTPressableButton *game10sec = [HTPressableButton buttonWithType:UIButtonTypeCustom];
@@ -90,20 +90,52 @@ int intervalButton = 20;
     
     
     
+    HTPressableButton *gameMulti = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    gameMulti.frame = CGRectMake(initXButton, initYButton + (heightButton + intervalButton) * 3,
+                                    widthButton, heightButton);
+    gameMulti.style = HTPressableButtonStyleRounded;
+    gameMulti.buttonColor = [UIColor sunflowerColor];
+    gameMulti.shadowColor = [UIColor citrusColor];
+    [gameMulti setTitle:@"multiple" forState:UIControlStateNormal];
+    gameMulti.tag = 3;
+    [gameMulti addTarget:self
+                     action:@selector(buttonPressed:)
+           forControlEvents:UIControlEventTouchUpInside];
     
-    HTPressableButton *dispRecord = [HTPressableButton buttonWithType:UIButtonTypeCustom];
-    dispRecord.frame = CGRectMake(initXButton, initYButton + (heightButton + intervalButton) * 3,
-                                     widthButton, heightButton);
-    dispRecord.style = HTPressableButtonStyleRounded;
-    dispRecord.buttonColor = [UIColor emeraldColor];
-    dispRecord.shadowColor = [UIColor nephritisColor];
-    [dispRecord setTitle:@"Record" forState:UIControlStateNormal];
-    dispRecord.tag = 3;
-    [dispRecord addTarget:self
+    [self.view addSubview:gameMulti];
+    
+    
+    //左
+    HTPressableButton *dispMyRecord = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    dispMyRecord.frame = CGRectMake(initXButton, initYButton + (heightButton + intervalButton) * 4,
+                                    widthButton/3, heightButton);
+    dispMyRecord.style = HTPressableButtonStyleRounded;
+    dispMyRecord.buttonColor = [UIColor leadColor];
+    dispMyRecord.shadowColor = [UIColor leadDarkColor];
+    [dispMyRecord setTitle:@"My Rec" forState:UIControlStateNormal];
+    dispMyRecord.tag = 4;
+    [dispMyRecord addTarget:self
+                     action:@selector(buttonPressed:)
+           forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:dispMyRecord];
+    
+    
+    //右
+    HTPressableButton *dispWorldRecord = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    dispWorldRecord.frame = CGRectMake(initXButton + (double)widthButton*2.0f/3.0f,
+                                       initYButton + (heightButton + intervalButton) * 4,
+                                     widthButton/3, heightButton);
+    dispWorldRecord.style = HTPressableButtonStyleRounded;
+    dispWorldRecord.buttonColor = [UIColor bitterSweetColor];
+    dispWorldRecord.shadowColor = [UIColor bitterSweetDarkColor];
+    [dispWorldRecord setTitle:@"WorldRec" forState:UIControlStateNormal];
+    dispWorldRecord.tag = 5;
+    [dispWorldRecord addTarget:self
                       action:@selector(buttonPressed:)
             forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:dispRecord];
+    [self.view addSubview:dispWorldRecord];
     
     
     
@@ -132,25 +164,31 @@ int intervalButton = 20;
     
 //    if(((UIView*)sender).tag == 0){
     
-    UIViewController *nextVC;
+    SHStartViewController *nextVC = [[SHStartViewController alloc]init];
     switch (((UIView*)sender).tag) {
         case 0:{
-            nextVC = [[SHStartViewController alloc]init];
+//            nextVC = [[SHStartViewController alloc]init];
+            nextVC.nextGameType = 0;
     //        [self presentViewController:startVC animated:NO completion:nil];
             break;
         }
         case 1:{
-            nextVC = [[SHSumViewController alloc]init];
+//            nextVC = [[SHSumViewController alloc]init];
+//            nextVC = [[SHStartViewController alloc]init];
+            nextVC.nextGameType = 1;
             break;
         }
             
         case 2:{
-            nextVC = [[SHSpeedViewController alloc]init];
+//            nextVC = [[SHSpeedViewController alloc]init];
+//            nextVC = [[SHStartViewController alloc]init];
+            nextVC.nextGameType = 2;
             break;
         }
             
         case 3:{
-            nextVC = [[SHStartViewController alloc]init];
+//            nextVC = [[SHStartViewController alloc]init];
+            nextVC.nextGameType = 3;
             break;
         }
         default:{

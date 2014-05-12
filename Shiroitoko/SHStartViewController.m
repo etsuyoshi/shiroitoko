@@ -15,6 +15,7 @@
 
 @implementation SHStartViewController
 @synthesize timer;
+@synthesize nextGameType;
 
 int timeStarter;
 
@@ -125,7 +126,26 @@ UILabel *labelStarter;
         [self stopTimer];
         //
         labelStarter.text = @"";
-        SHViewController *vc = [[SHViewController alloc]init];
+        UIViewController *vc;
+        switch (self.nextGameType) {
+            case 0:{
+                vc = [[SHViewController alloc]init];
+                break;
+            }
+            case 1:{
+                vc = [[SHSumViewController alloc]init];
+                break;
+            }
+            case 2:{
+                vc = [[SHSpeedViewController alloc]init];
+                break;
+            }
+            default:{
+                return;
+                break;
+            }
+        }
+        
 //        [self presentViewController:vc animated:NO completion:nil];
         [self.navigationController pushViewController:vc animated:NO];
         
