@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SHViewController.h"
+#import "SHStandardViewController.h"
 #import "SHStartViewController.h"
 #import "SHInitViewController.h"
 

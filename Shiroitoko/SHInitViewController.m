@@ -19,6 +19,12 @@ int heightButton = 50;
 int initXButton = 30;
 int initYButton = 130;
 int intervalButton = 20;
+HTPressableButton *game10sec;
+HTPressableButton *gameSummation;
+HTPressableButton *gameSpeed;
+HTPressableButton *gameMulti;
+HTPressableButton *dispMyRecord;
+HTPressableButton *dispWorldRecord;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,7 +43,7 @@ int intervalButton = 20;
     self.view.backgroundColor = [UIColor grassColor];
     
     //10秒でどこまでいけるか
-    HTPressableButton *game10sec = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    game10sec = [HTPressableButton buttonWithType:UIButtonTypeCustom];
     game10sec.frame = CGRectMake(initXButton, initYButton, widthButton, heightButton);
     game10sec.style = HTPressableButtonStyleRounded;
     [game10sec setTitle:@"10seconds" forState:UIControlStateNormal];
@@ -57,7 +63,7 @@ int intervalButton = 20;
     //取得可能タイルが複数
     //逆向き方向
     //ダブルタッチ、トリプルタッチ
-    HTPressableButton *gameSummation = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    gameSummation = [HTPressableButton buttonWithType:UIButtonTypeCustom];
     gameSummation.frame = CGRectMake(initXButton, initYButton + heightButton + intervalButton,
                                      widthButton, heightButton);
     gameSummation.style = HTPressableButtonStyleRounded;
@@ -74,7 +80,7 @@ int intervalButton = 20;
     
     
     //50個を取得するのに要する時間
-    HTPressableButton *gameSpeed = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    gameSpeed = [HTPressableButton buttonWithType:UIButtonTypeCustom];
     gameSpeed.frame = CGRectMake(initXButton, initYButton + (heightButton + intervalButton) * 2,
                                      widthButton, heightButton);
     gameSpeed.style = HTPressableButtonStyleRounded;
@@ -90,7 +96,7 @@ int intervalButton = 20;
     
     
     
-    HTPressableButton *gameMulti = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    gameMulti = [HTPressableButton buttonWithType:UIButtonTypeCustom];
     gameMulti.frame = CGRectMake(initXButton, initYButton + (heightButton + intervalButton) * 3,
                                     widthButton, heightButton);
     gameMulti.style = HTPressableButtonStyleRounded;
@@ -106,7 +112,7 @@ int intervalButton = 20;
     
     
     //左
-    HTPressableButton *dispMyRecord = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    dispMyRecord = [HTPressableButton buttonWithType:UIButtonTypeCustom];
     dispMyRecord.frame = CGRectMake(initXButton, initYButton + (heightButton + intervalButton) * 4,
                                     widthButton/3, heightButton);
     dispMyRecord.style = HTPressableButtonStyleRounded;
@@ -122,7 +128,7 @@ int intervalButton = 20;
     
     
     //右
-    HTPressableButton *dispWorldRecord = [HTPressableButton buttonWithType:UIButtonTypeCustom];
+    dispWorldRecord = [HTPressableButton buttonWithType:UIButtonTypeCustom];
     dispWorldRecord.frame = CGRectMake(initXButton + (double)widthButton*2.0f/3.0f,
                                        initYButton + (heightButton + intervalButton) * 4,
                                      widthButton/3, heightButton);
@@ -165,9 +171,11 @@ int intervalButton = 20;
 //    if(((UIView*)sender).tag == 0){
     
     SHStartViewController *nextVC = [[SHStartViewController alloc]init];
+    nextVC.backgroundColor = ((HTPressableButton *)sender).buttonColor;
     switch (((UIView*)sender).tag) {
         case 0:{
 //            nextVC = [[SHStartViewController alloc]init];
+            
             nextVC.nextGameType = 0;
     //        [self presentViewController:startVC animated:NO completion:nil];
             break;

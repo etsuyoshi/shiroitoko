@@ -7,6 +7,7 @@
 //
 
 #import "SHAppDelegate.h"
+#import "GAI.h"
 
 @implementation SHAppDelegate
 
@@ -16,6 +17,28 @@
     
 //    [[DeployGateSDK sharedInstance] launchApplicationWithAuthor:@"tuyo" key:@"cde96ad604139b1ff49b4ba8df840025eb18dfc5"];
     [[DeployGateSDK sharedInstance] launchApplicationWithAuthor:@"tuyo" key:@"cde96ad604139b1ff49b4ba8df840025eb18dfc5" userInfomationEnabled:YES];
+    
+    
+    
+    NSString *strTrackingId = @"UA-50924929-2";
+    // GoogleAnalytics
+    // (オプション)キャッチされない例外エラーをトラッキングするか。デフォルト:有効
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // (オプション)ディスパッチインターバル。デフォルト:20秒
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // (オプション)YESにするとより多くのデバッグ情報を取得する。デフォルト:有効
+//    [GAI sharedInstance].debug = YES;
+    
+    // トラッカーインスタンスの生成。自分のトラッカーIDに変える
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:strTrackingId];
+    
+    // トラッカーIDひとつしか使わないならここでデフォルトトラッカーを置き換え
+    [GAI sharedInstance].defaultTracker = tracker;
+    
+    
+    
     
     
     

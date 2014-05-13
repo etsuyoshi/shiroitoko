@@ -16,6 +16,7 @@
 @implementation SHStartViewController
 @synthesize timer;
 @synthesize nextGameType;
+@synthesize backgroundColor;
 
 int timeStarter;
 
@@ -41,7 +42,7 @@ UILabel *labelStarter;
     labelStarter.text = [NSString stringWithFormat:@"%d", timeStarter];
     labelStarter.textAlignment = NSTextAlignmentCenter;
     labelStarter.font = [UIFont systemFontOfSize:100];
-    labelStarter.textColor = [UIColor redColor];
+    labelStarter.textColor = [UIColor whiteColor];
     labelStarter.backgroundColor = [UIColor clearColor];
     [labelStarter sizeToFit];
     labelStarter.center = CGPointMake(self.view.bounds.size.width/2,
@@ -80,7 +81,8 @@ UILabel *labelStarter;
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    self.view.backgroundColor = [UIColor blackColor];
+//    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = self.backgroundColor;
     
     timeStarter = 3;
     NSLog(@"init timercounter = %d", timeStarter);
@@ -129,7 +131,7 @@ UILabel *labelStarter;
         UIViewController *vc;
         switch (self.nextGameType) {
             case 0:{
-                vc = [[SHViewController alloc]init];
+                vc = [[SHStandardViewController alloc]init];
                 break;
             }
             case 1:{

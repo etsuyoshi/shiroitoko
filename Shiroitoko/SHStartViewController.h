@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SHViewController.h"
+#import "SHStandardViewController.h"
 #import "SHSumViewController.h"
 #import "SHSpeedViewController.h"
 
@@ -16,4 +16,5 @@
 }
 @property (nonatomic) NSTimer *timer;
 @property int nextGameType;
+@property UIColor *backgroundColor;
 @end

@@ -25,7 +25,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Shiroitoko/SHViewController.m"
+            filePath = "Shiroitoko/SHStandardViewController.m"
             timestampString = "421506800.170804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
